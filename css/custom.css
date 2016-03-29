@@ -1,0 +1,16 @@
+#frame-main .goog-date-picker .goog-date-picker-guaranteed-departures {
+    background: #269dd8;
+    color: #fff;
+}
+
+#frame-main #tours-not-found p {
+    font-size: 0;
+}
+
+div#tours-not-found:before {
+    content: "РќРµ РЅР°С€Р»Рё С‡С‚Рѕ РёСЃРєР°Р»Рё - РїРѕР·РІРѕРЅРёС‚Рµ РЅР°Рј РїРѕ С‚РµР»РµС„РѕРЅСѓ +375-17-222-46-51"; font-size: 30px;
+}
+
+#email {
+    display: none;
+}
