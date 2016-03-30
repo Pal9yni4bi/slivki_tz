@@ -3120,3 +3120,45 @@ function initDetailBoxPage(marketActionOID) {
         $(window).unload(createBeforeCookie);
     }
 }
+//радио
+$( document ).ready(function() {
+	var $numberOfVisit = $.cookie('numberOfVisit');
+	var $umorfm = $("#umorfm"); // кэшируем
+	$numberOfVisit = +$numberOfVisit; //приводим к числовому типу переменной
+	if ($numberOfVisit >= 4) {
+		// continue;
+	} else if ($numberOfVisit < 4) {
+		$.cookie('numberOfVisit', $numberOfVisit + 1);
+		radioTooltipHint();
+	} else {
+		$.cookie('numberOfVisit', 0);
+		radioTooltipHint();
+	}
+	function radioTooltipHint() {
+		$umorfm.tooltip('show');
+		setTimeout(hidettp, 5000);
+		function hidettp() {
+			$umorfm.tooltip('hide');
+		}
+	}
+	$("body").append("<img src=\"/images/humorfm.png\" class=\"humorfmicon\" alt=\"Радио ЮморФМ\">");
+	$humorfmicon = $(".humorfmicon");
+	$humorfmicon.addClass("hidden");
+	$("#umorfm").on("click", function() {
+		radioControl();
+	});
+	$humorfmicon.on("click", function() {
+		radioControl();
+	});
+	function radioControl() {
+		if ($umorfm.hasClass("playing")) {
+			$umorfm.removeClass("playing");
+			$humorfmicon.addClass("hidden");
+			document.getElementById("umorfm").childNodes[1].pause();
+		} else {
+			$umorfm.addClass("playing");
+			$humorfmicon.removeClass("hidden");
+			document.getElementById("umorfm").childNodes[1].play();
+		}
+	}
+});

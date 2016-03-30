@@ -4416,3 +4416,27 @@ img.jcrop-preview {
     display: none;
     margin: 0 auto;
 }
+/*радио*/
+body {
+	position: relative;
+}
+.humorfmicon {
+	position: fixed;
+	top: 400px;
+	right: 70px;
+	cursor: pointer;
+}
+#umorfm:after {
+	content: "\25BA";
+	vertical-align: middle;
+}
+#umorfm.playing:after {
+	content: "\25A0";
+	font-size: 30px;
+	line-height: 0.1;
+}
+@media (max-width: 960px) {   
+	.humorfmicon {
+		display: none;
+	}
+}
